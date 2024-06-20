@@ -10,15 +10,16 @@ const productRouter = require("./routes/products");
 const MONGODB_STRING = process.env.MONGODB_STRING;
 const PORT = process.env.PORT || 4040;
 
-mongoose.connect(MONGODB_STRING)
-.then(() => {
+mongoose
+  .connect(MONGODB_STRING)
+  .then(() => {
     app.listen(PORT, () => {
-        console.log(`Connected to the database and listening to port: ${PORT}`);
-    })
-})
-.catch((error) => {
+      console.log(`Connected to the database and listening to port: ${PORT}`);
+    });
+  })
+  .catch((error) => {
     console.log(error);
-})
+  });
 
 
 // middleware
